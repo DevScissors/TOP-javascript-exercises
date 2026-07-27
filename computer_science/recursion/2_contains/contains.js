@@ -1,23 +1,3 @@
-const tree = {
-  data: {
-    duplicate: "e",
-    stuff: {
-      thing: {
-        banana: NaN,
-        moreStuff: {
-          something: "foo",
-          answer: "test",
-        },
-      },
-    },
-    info: {
-      duplicate: "e",
-      magicNumber: 44,
-      empty: null,
-    },
-  },
-};
-
 const contains = function (tree, targetValue) {
   for (const key in tree) {
     const value = tree[key];
@@ -35,8 +15,6 @@ const contains = function (tree, targetValue) {
 
   return false;
 };
-
-contains(tree, 44);
 
 // Do not edit below this line
 module.exports = contains;
