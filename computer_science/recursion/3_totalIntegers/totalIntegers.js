@@ -1,16 +1,14 @@
 const totalIntegers = function (value) {
   let totalIntCount = 0;
   if (typeof value === "object" && value !== null && !Array.isArray(value)) {
-    const objValuesArr = Object.values(value);
-    totalIntegers(objValuesArr);
-  } else {
-    for (const item of value) {
-      if (typeof item === "number") {
-        totalIntCount++;
-      }
-      if (typeof item === "object" && item !== null) {
-        totalIntegers(item);
-      }
+    value = Object.values(value);
+  }
+  for (const item of value) {
+    if (typeof item === "number") {
+      totalIntCount++;
+    }
+    if (typeof item === "object" && item !== null) {
+      totalIntegers(item);
     }
   }
   return totalIntCount;
