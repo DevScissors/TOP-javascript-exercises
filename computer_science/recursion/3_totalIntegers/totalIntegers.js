@@ -8,13 +8,17 @@ const totalIntegers = function (value) {
       if (typeof item === "number") {
         totalIntCount++;
       }
+      if (typeof item === "object" && item !== null) {
+        totalIntegers(item);
+      }
     }
   }
   return totalIntCount;
 };
 
-totalIntegers({ a: 1, b: "2", c: 3 }); // 2
-totalIntegers([1, 2, "3", 4]); // 3
+// totalIntegers({ a: 1, b: "2", c: 3 }); // 2
+// totalIntegers([1, 2, "3", 4]); // 3
+totalIntegers([[[[[[[[[[[[[[4]]]]]], 246]]]]]]]]); // 2
 
 // Do not edit below this line
 module.exports = totalIntegers;
