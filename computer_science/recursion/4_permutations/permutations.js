@@ -1,6 +1,6 @@
 const permutations = function (arr) {
-  if (arr.length <= 1) {
-    return [arr];
+  if (arr.length === 0) {
+    return [[]];
   }
 
   let results = [];
