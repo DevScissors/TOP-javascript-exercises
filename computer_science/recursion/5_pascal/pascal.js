@@ -1,31 +1,18 @@
 const pascal = function (n) {
-  if (n < 2) {
-    return [1];
+  const currentLine = [1];
+  if (n === 1) {
+    return currentLine;
   }
 
-  let results = [1, 1];
-  let tempArr = [...results];
-  let tempTotal = 0;
+  const prevLine = pascal(n - 1);
 
-  // n = 3
-  // [1]
-  // [0+1, 1+0] -> [1, 1]
-  // [0+1, 1+1, 1+0] -> [1, 2, 1]
-  // [0+1, 2+1, 1+2, 1] ->  [1, 3, 3, 1]
+  prevLine.forEach((num, i) => {
+    const rightNeighbor = prevLine[i + 1] !== undefined ? prevLine[i + 1] : 0;
+    currentLine.push(num + rightNeighbor);
+  });
 
-  for (let i = 1; i < n; i++) {
-    results[1] = calculateMiddleNum(tempArr);
-  }
-
-  function calculateMiddleNum(arr) {
-    for (const num of arr) {
-      tempTotal += num;
-    }
-    return tempTotal;
-  }
+  return currentLine;
 };
-
-pascal(3);
 
 // Do not edit below this line
 module.exports = pascal;

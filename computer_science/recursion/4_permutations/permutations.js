@@ -25,5 +25,7 @@ function insertToAllPlaces(element, arr) {
   return insertResults;
 }
 
+permutations([1, 2, 3, 4]);
+
 // Do not edit below this line
 module.exports = permutations;
