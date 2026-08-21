@@ -6,10 +6,6 @@ const fibs = (n) => {
   return results;
 };
 
-console.log(fibs(4));
-console.log(fibs(5));
-console.log(fibs(8));
-
 const fibsRec = (n) => {
   console.log("This was printed recursively");
   if (n === 0) {
@@ -26,7 +22,3 @@ const fibsRec = (n) => {
   sequence.push(nextValue);
   return sequence;
 };
-
-console.log(fibsRec(5));
-console.log(fibsRec(7));
-console.log(fibsRec(9));
