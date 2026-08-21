@@ -10,7 +10,7 @@ const { fibs, fibsRec } = require("./fibs");
   test("10th fibonacci number is 55", () => {
     expect(fibs(10)).toEqual([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]);
   });
-  test("0th fibonacci number is 0", () => {
+  test("0th fibonacci number is 0 and returns [0, 1]", () => {
     expect(fibs(0)).toEqual([0, 1]);
   });
 }),
